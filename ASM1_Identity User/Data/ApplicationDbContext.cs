@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ASM1_Identity_User.Models;
 
 namespace ASM1_Identity_User.Data
 {
@@ -9,5 +10,6 @@ namespace ASM1_Identity_User.Data
             : base(options)
         {
         }
+       
     }
 }

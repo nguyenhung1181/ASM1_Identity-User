@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ASM1_Identity_User.Models;
 
 namespace ASM1_Identity_User.Data;
 
@@ -18,4 +19,13 @@ public class ASM1_Identity_UserContext : IdentityDbContext<IdentityUser>
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
     }
+
+    public DbSet<ASM1_Identity_User.Models.Product> Product { get; set; }
+
+    public DbSet<ASM1_Identity_User.Models.Category> Category { get; set; }
+
+
+
+
+    
 }
