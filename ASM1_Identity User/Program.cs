@@ -6,6 +6,13 @@ var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 var configuration = builder.Configuration;
 
+services.AddAuthentication().AddFacebook(options =>
+{
+    options.AppId = configuration["Authentication:Facebook:AppId"];
+    options.AppSecret = configuration["Authentication:Facebook:AppSecret"];
+    options.CallbackPath = "/signin-facebook";
+});
+
 services.AddAuthentication().AddGoogle(googleOptions =>
 {
     googleOptions.ClientId = configuration["Authentication:Google:ClientId"];
@@ -19,6 +26,8 @@ services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
     microsoftOptions.ClientSecret = configuration["Authentication:Microsoft:ClientSecret"];
     microsoftOptions.CallbackPath = "/signin-microsoft";
 });
+
+
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ASM1_Identity_UserContext>(options =>

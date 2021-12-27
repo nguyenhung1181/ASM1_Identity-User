@@ -4,6 +4,7 @@ namespace ASM1_Identity_User.Models
 {
     public class Category
     {
+        public int Id { get; set; }
         public int catID { get; set; }
 
         [StringLength(20, MinimumLength = 3)]

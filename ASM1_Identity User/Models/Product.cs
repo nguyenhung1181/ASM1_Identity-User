@@ -5,6 +5,7 @@ namespace ASM1_Identity_User.Models
 {
     public class Product
     {
+        public int Id { get; set; }
         public int ProducID { get; set; }
 
         [StringLength(20, MinimumLength = 3)]
